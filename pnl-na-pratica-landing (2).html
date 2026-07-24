@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNL Na Prática — O Manual Da Sua Mente</title>
+<meta name="description" content="Descubra como reprogramar a sua mente com técnicas práticas de PNL. Ebook completo por apenas 297 MT.">
+
+<!-- ============ CONFIG ============ -->
+<script>
+const CONFIG = {
+  productName: "PNL Na Prática — O Manual Da Sua Mente",
+  price: "297 MT",
+  oldPrice: "597 MT",
+  checkoutUrl: "https://pay.escalepay.com/SEU-LINK-AQUI", // <-- substituir pelo link real do EscalePay
+  countdownHours: 24, // reinicia diariamente (barra do topo)
+};
+</script>
+
+<style>
+  :root{
+    --bg-dark:#0d0d0d;
+    --bg-card:#161616;
+    --gold:#ff8c1a;
+    --gold-light:#ffb347;
+    --text-light:#f5f5f5;
+    --text-muted:#b8b8b8;
+    --green:#25d366;
+    --danger:#ff4d4d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+  body{background:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;}
+  .container{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* Urgency bar */
+  .urgency-bar{
+    background:linear-gradient(90deg,var(--danger),#ff8181);
+    color:#fff;text-align:center;padding:10px;font-weight:700;
+    font-size:.9rem;position:sticky;top:0;z-index:999;
+  }
+  .urgency-bar span#countdown{font-variant-numeric:tabular-nums;}
+
+  /* Hero */
+  .hero{padding:50px 0 30px;text-align:center;}
+  .hero .badge{
+    display:inline-block;background:rgba(255,140,26,.15);color:var(--gold-light);
+    padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:600;margin-bottom:18px;
+    border:1px solid var(--gold);
+  }
+  .hero h1{font-size:2.1rem;font-weight:800;margin-bottom:16px;line-height:1.25;}
+  .hero h1 span{color:var(--gold);}
+  .hero p.sub{color:var(--text-muted);font-size:1.05rem;max-width:600px;margin:0 auto 28px;}
+  .cover-wrap{margin:20px auto;max-width:320px;position:relative;}
+  .cover-wrap img{border-radius:10px;box-shadow:0 20px 50px rgba(255,140,26,.25);}
+
+  .cta-btn{
+    display:inline-block;background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    color:#111;font-weight:800;padding:18px 42px;border-radius:10px;font-size:1.15rem;
+    box-shadow:0 10px 30px rgba(255,140,26,.35);transition:transform .15s ease;
+    animation:pulse 2s infinite;border:none;cursor:pointer;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 10px 30px rgba(255,140,26,.35);}
+    50%{box-shadow:0 10px 45px rgba(255,140,26,.6);}
+  }
+  .cta-sub{font-size:.85rem;color:var(--text-muted);margin-top:12px;}
+
+  section{padding:50px 0;}
+  h2{font-size:1.7rem;text-align:center;margin-bottom:35px;font-weight:800;}
+  h2 span{color:var(--gold);}
+
+  /* Pain points */
+  .pains{display:grid;gap:16px;}
+  .pain-item{
+    background:var(--bg-card);border-left:4px solid var(--danger);
+    padding:16px 20px;border-radius:8px;display:flex;gap:12px;align-items:flex-start;
+  }
+  .pain-item .icon{font-size:1.3rem;}
+
+  /* Benefits */
+  .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .benefit-card{
+    background:var(--bg-card);padding:24px;border-radius:12px;border:1px solid #262626;
+    transition:border-color .2s;
+  }
+  .benefit-card:hover{border-color:var(--gold);}
+  .benefit-card .icon{font-size:1.8rem;margin-bottom:12px;}
+  .benefit-card h3{font-size:1.05rem;margin-bottom:8px;color:var(--gold-light);}
+  .benefit-card p{color:var(--text-muted);font-size:.92rem;}
+
+  /* What's inside */
+  .modules{display:grid;gap:12px;}
+  .module{
+    background:var(--bg-card);padding:18px 20px;border-radius:10px;
+    display:flex;align-items:center;gap:16px;border:1px solid #262626;
+  }
+  .module .num{
+    background:var(--gold);color:#111;font-weight:800;min-width:38px;height:38px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .module .txt strong{display:block;font-size:1rem;}
+  .module .txt span{color:var(--text-muted);font-size:.87rem;}
+
+  /* Social proof */
+  .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+  .testi-card{background:var(--bg-card);padding:20px;border-radius:12px;border:1px solid #262626;}
+  .testi-card .stars{color:var(--gold);margin-bottom:10px;}
+  .testi-card p{color:var(--text-muted);font-size:.92rem;font-style:italic;margin-bottom:14px;}
+  .testi-card .who{display:flex;align-items:center;gap:10px;}
+  .testi-card .avatar{
+    width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    display:flex;align-items:center;justify-content:center;color:#111;font-weight:800;font-size:.9rem;
+  }
+  .testi-card .who strong{font-size:.9rem;}
+  .testi-card .who small{color:var(--text-muted);}
+
+  /* Price box */
+  .price-box{
+    background:linear-gradient(160deg,#1a1a1a,#0d0d0d);
+    border:2px solid var(--gold);border-radius:16px;padding:36px 24px;text-align:center;
+    max-width:460px;margin:0 auto;box-shadow:0 20px 60px rgba(255,140,26,.15);
+  }
+  .price-box .old{color:var(--text-muted);text-decoration:line-through;font-size:1.1rem;}
+  .price-box .new{font-size:3rem;font-weight:900;color:var(--gold);margin:6px 0;}
+  .price-box .new small{font-size:1.1rem;color:var(--text-muted);font-weight:500;}
+  .price-box ul{list-style:none;text-align:left;margin:20px 0;padding:0;}
+  .price-box ul li{padding:8px 0;color:var(--text-light);font-size:.95rem;display:flex;gap:8px;}
+  .price-box ul li:before{content:"✔";color:var(--gold);font-weight:800;}
+
+  /* FAQ */
+  .faq-item{background:var(--bg-card);border-radius:10px;margin-bottom:12px;overflow:hidden;border:1px solid #262626;}
+  .faq-q{padding:16px 20px;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;align-items:center;}
+  .faq-q .plus{color:var(--gold);font-size:1.3rem;transition:transform .2s;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px;color:var(--text-muted);font-size:.92rem;}
+  .faq-item.open .faq-a{max-height:200px;padding-bottom:16px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+
+  /* Guarantee */
+  .guarantee{
+    display:flex;align-items:center;gap:20px;background:var(--bg-card);
+    border-radius:14px;padding:26px;max-width:600px;margin:0 auto;border:1px solid #262626;
+  }
+  .guarantee .seal-img{width:70px;height:70px;flex-shrink:0;}
+  .guarantee p{color:var(--text-muted);font-size:.92rem;}
+
+  /* Fast countdown boxes (price section) */
+  .fast-countdown{
+    display:flex;justify-content:center;gap:10px;margin:18px 0;
+  }
+  .fc-box{
+    background:#111;border:1px solid var(--gold);border-radius:8px;
+    width:64px;padding:8px 0;display:flex;flex-direction:column;align-items:center;
+  }
+  .fc-box span{
+    font-size:1.5rem;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;
+    transition:transform .1s ease;
+  }
+  .fc-box span.tick{transform:scale(1.2);}
+  .fc-box small{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;margin-top:2px;}
+
+  /* Social proof popup */
+  #social-popup{
+    position:fixed;bottom:20px;left:20px;background:var(--bg-card);border:1px solid var(--gold);
+    border-radius:10px;padding:12px 16px;display:none;align-items:center;gap:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);max-width:280px;z-index:998;
+  }
+  #social-popup .dot{width:10px;height:10px;background:var(--green);border-radius:50%;flex-shrink:0;}
+  #social-popup .txt{font-size:.82rem;color:var(--text-light);}
+  #social-popup .txt strong{color:var(--gold-light);}
+
+  /* WhatsApp float */
+  .wa-float{
+    position:fixed;bottom:20px;right:20px;background:var(--green);width:56px;height:56px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+    box-shadow:0 8px 20px rgba(0,0,0,.4);z-index:998;
+  }
+
+  footer{text-align:center;padding:30px 20px;color:var(--text-muted);font-size:.8rem;border-top:1px solid #262626;}
+
+  @media(max-width:600px){
+    .hero h1{font-size:1.6rem;}
+    .price-box .new{font-size:2.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  🔥 Oferta de lançamento termina em <span id="countdown">24:00:00</span>
+</div>
+
+<!-- HERO -->
+<div class="hero container">
+  <div class="badge">📘 EBOOK DIGITAL — ACESSO IMEDIATO</div>
+  <h1>Domine a Sua Mente Com <span>PNL Na Prática</span></h1>
+  <p class="sub">O manual passo a passo para reprogramar pensamentos limitantes, controlar as suas emoções e comunicar com mais confiança — usando técnicas reais de Programação Neurolinguística.</p>
+
+  <div class="cover-wrap">
+    <img src="https://i.ibb.co/Zpk7T0dQ/Chat-GPT-Image-24-07-2026-11-59-28.png" alt="Capa do ebook PNL Na Prática, O Manual Da Sua Mente">
+  </div>
+
+  <a href="#comprar" class="cta-btn">👉 QUERO TRANSFORMAR A MINHA MENTE</a>
+  <p class="cta-sub">Pagamento seguro via EscalePay · Acesso imediato após confirmação</p>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="container">
+  <h2>Isto <span>soa-te familiar?</span></h2>
+  <div class="pains">
+    <div class="pain-item"><span class="icon">😩</span><span>Sentes que os teus pensamentos negativos controlam as tuas decisões todos os dias.</span></div>
+    <div class="pain-item"><span class="icon">😰</span><span>Ficas travado(a) por medo, insegurança ou ansiedade em momentos importantes.</span></div>
+    <div class="pain-item"><span class="icon">🗣️</span><span>Tens dificuldade em comunicar as tuas ideias e influenciar as pessoas ao teu redor.</span></div>
+    <div class="pain-item"><span class="icon">🔁</span><span>Já tentaste "pensar positivo" várias vezes, mas os velhos padrões sempre voltam.</span></div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="container">
+  <h2>O Que Vais <span>Conquistar</span></h2>
+  <div class="benefits">
+    <div class="benefit-card"><div class="icon">🧠</div><h3>Reprogramação Mental</h3><p>Técnicas práticas de PNL para substituir crenças limitantes por padrões de sucesso.</p></div>
+    <div class="benefit-card"><div class="icon">💬</div><h3>Comunicação Persuasiva</h3><p>Aprende a linguagem que gera conexão, confiança e influência genuína.</p></div>
+    <div class="benefit-card"><div class="icon">🎯</div><h3>Controlo Emocional</h3><p>Ferramentas para gerir ansiedade, medo e stress em situações do dia a dia.</p></div>
+    <div class="benefit-card"><div class="icon">⚡</div><h3>Resultados Práticos</h3><p>Exercícios aplicáveis desde o primeiro capítulo — sem teoria excessiva.</p></div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="container">
+  <h2>O Que Está <span>Dentro do Ebook</span></h2>
+  <div class="modules">
+    <div class="module"><div class="num">1</div><div class="txt"><strong>Fundamentos da PNL</strong><span>Como a tua mente cria a tua realidade</span></div></div>
+    <div class="module"><div class="num">2</div><div class="txt"><strong>Quebrando Padrões Limitantes</strong><span>Técnicas de reformulação (reframing)</span></div></div>
+    <div class="module"><div class="num">3</div><div class="txt"><strong>Âncoras Emocionais</strong><span>Como controlar o teu estado emocional em segundos</span></div></div>
+    <div class="module"><div class="num">4</div><div class="txt"><strong>Linguagem de Influência</strong><span>Comunicação persuasiva e rapport instantâneo</span></div></div>
+    <div class="module"><div class="num">5</div><div class="txt"><strong>Aplicação Prática Diária</strong><span>Exercícios para usar a PNL na tua rotina</span></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="container">
+  <h2>Quem Já <span>Aplicou, Aprova</span></h2>
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Em duas semanas já consegui controlar melhor a ansiedade antes de reuniões importantes."</p>
+      <div class="who"><div class="avatar">MJ</div><div><strong>Marta J.</strong><br><small>Maputo</small></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Linguagem simples e direta. Finalmente entendi como a minha mente sabota as minhas metas."</p>
+      <div class="who"><div class="avatar">CS</div><div><strong>Carlos S.</strong><br><small>Beira</small></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"As técnicas de âncoras emocionais mudaram a forma como lido com o stress no trabalho."</p>
+      <div class="who"><div class="avatar">AN</div><div><strong>Ana N.</strong><br><small>Matola</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="container" id="comprar">
+  <h2>Garanta o Seu <span>Acesso Agora</span></h2>
+  <div class="price-box">
+    <img src="https://i.ibb.co/9Qyz5RL/Chat-GPT-Image-24-07-2026-11-49-11-2.png" alt="Mockup do ebook PNL Na Prática" style="max-width:220px;margin:0 auto 20px;border-radius:8px;">
+    <div class="old">De <span id="old-price"></span></div>
+    <div class="new">Por <span id="new-price"></span> <small>à vista</small></div>
+
+    <div class="fast-countdown">
+      <div class="fc-box"><span id="fc-h">00</span><small>Horas</small></div>
+      <div class="fc-box"><span id="fc-m">00</span><small>Min</small></div>
+      <div class="fc-box"><span id="fc-s">00</span><small>Seg</small></div>
+    </div>
+
+    <ul>
+      <li>Ebook completo em PDF</li>
+      <li>Acesso imediato após pagamento</li>
+      <li>Leitura em qualquer dispositivo</li>
+    </ul>
+    <a href="#" id="checkout-link" class="cta-btn" style="width:100%;">👉 QUERO O MEU EBOOK AGORA</a>
+    <p class="cta-sub">🔒 Pagamento 100% seguro via EscalePay</p>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="container">
+  <div class="guarantee">
+    <img class="seal-img" src="https://i.ibb.co/6JJp92s2/Selo-garantia-7dias-curso-768x768.png" alt="Selo garantia 7 dias">
+    <p><strong style="color:var(--text-light);">Garantia de 7 dias.</strong> Se sentires que o conteúdo não é para ti, tens 7 dias para pedir reembolso, sem burocracia.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container">
+  <h2>Perguntas <span>Frequentes</span></h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Como recebo o ebook depois de pagar? <span class="plus">+</span></div>
+    <div class="faq-a">Após a confirmação do pagamento via EscalePay, recebes o link de acesso ao ebook no teu e-mail.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Preciso de conhecimento prévio de PNL? <span class="plus">+</span></div>
+    <div class="faq-a">Não. O ebook foi escrito em linguagem simples, para qualquer pessoa aplicar desde o primeiro capítulo.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Que formas de pagamento posso usar? <span class="plus">+</span></div>
+    <div class="faq-a">M-Pesa, e-Mola, mKesh e cartão, através do checkout seguro do EscalePay.</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 PNL Na Prática. Todos os direitos reservados.
+</footer>
+
+<div id="social-popup">
+  <div class="dot"></div>
+  <div class="txt"><strong id="popup-name">Alguém</strong> <span id="popup-city"></span> acabou de comprar o ebook</div>
+</div>
+
+<script>
+  // Preencher preços e links a partir do CONFIG
+  document.getElementById('old-price').textContent = CONFIG.oldPrice;
+  document.getElementById('new-price').textContent = CONFIG.price;
+  document.getElementById('checkout-link').href = CONFIG.checkoutUrl;
+  document.getElementById('wa-btn').href = "https://wa.me/" + CONFIG.whatsappNumber;
+  document.querySelectorAll('a.cta-btn[href="#comprar"]').forEach(el=>{});
+
+  // Countdown diário
+  function startCountdown(){
+    let key = 'pnl_countdown_end';
+    let end = localStorage.getItem(key);
+    let now = Date.now();
+    if(!end || now > parseInt(end)){
+      end = now + CONFIG.countdownHours*60*60*1000;
+      localStorage.setItem(key, end);
+    } else {
+      end = parseInt(end);
+    }
+    function tick(){
+      let diff = end - Date.now();
+      if(diff <= 0){
+        end = Date.now() + CONFIG.countdownHours*60*60*1000;
+        localStorage.setItem(key, end);
+        diff = end - Date.now();
+      }
+      let h = String(Math.floor(diff/3600000)).padStart(2,'0');
+      let m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+      let s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+      document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+    }
+    tick();
+    setInterval(tick,1000);
+  }
+  startCountdown();
+
+  // Contagem regressiva rápida (quadradinhos da secção de preço) — cria urgência visual
+  function startFastCountdown(){
+    let totalSeconds = 2*3600; // valor inicial de exibição (2h)
+    const elH = document.getElementById('fc-h');
+    const elM = document.getElementById('fc-m');
+    const elS = document.getElementById('fc-s');
+    function render(){
+      const h = String(Math.floor(totalSeconds/3600)).padStart(2,'0');
+      const m = String(Math.floor((totalSeconds%3600)/60)).padStart(2,'0');
+      const s = String(totalSeconds%60).padStart(2,'0');
+      elH.textContent = h; elM.textContent = m; elS.textContent = s;
+      [elH,elM,elS].forEach(el=>{ el.classList.add('tick'); setTimeout(()=>el.classList.remove('tick'),100); });
+    }
+    render();
+    setInterval(()=>{
+      totalSeconds -= 1;
+      if(totalSeconds <= 0){ totalSeconds = 2*3600; }
+      render();
+    }, 150); // velocidade acelerada de contagem
+  }
+  startFastCountdown();
+
+  // FAQ toggle
+  function toggleFaq(el){
+    el.parentElement.classList.toggle('open');
+  }
+
+  // Social proof popup
+  const names = ["Sara M.","João P.","Fátima R.","Nelson C.","Beatriz T.","Hélder M."];
+  const cities = ["Maputo","Matola","Beira","Nampula","Xai-Xai","Quelimane"];
+  function showPopup(){
+    const n = names[Math.floor(Math.random()*names.length)];
+    const c = cities[Math.floor(Math.random()*cities.length)];
+    document.getElementById('popup-name').textContent = n;
+    document.getElementById('popup-city').textContent = "em " + c;
+    const popup = document.getElementById('social-popup');
+    popup.style.display = 'flex';
+    setTimeout(()=>{ popup.style.display='none'; }, 4000);
+  }
+  setTimeout(showPopup, 3000);
+  setInterval(showPopup, 15000);
+
+  // Meta Pixel
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '818384020911022');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    value: 297,
+    currency: 'MZN',
+    content_name: 'PNL Na Prática, O Manual Da Sua Mente',
+    content_type: 'product'
+  });
+
+  document.getElementById('checkout-link').addEventListener('click', function(){
+    fbq('track', 'InitiateCheckout', {
+      value: 297,
+      currency: 'MZN',
+      content_name: 'PNL Na Prática, O Manual Da Sua Mente'
+    });
+  });
+</script>
+
+</body>
+</html>
